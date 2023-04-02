@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#google_logo_box {
+  text-align: center;
+}
+
+#google_logo {
+  color: blue;
+}
+
+#search_box {
+  margin: 10px;
+  padding: 5px;
+  width: 250px;
+}
+
+#google_buttons,
+#bottom_links_box {
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+}
