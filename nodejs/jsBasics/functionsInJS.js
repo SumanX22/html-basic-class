@@ -15,11 +15,8 @@ function aloo(name) {
 // how to write a runnner main in Java
 
 // class MainWala  {
-
 //     public void static aloo(String args[]) {
-
 //         AlooWala newAloo = new AlooWala();
-
 //         newAloo.aloo("CHandramukhi Aloo")
 //     }
 // }
