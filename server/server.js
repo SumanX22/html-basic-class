@@ -8,8 +8,6 @@ app.use(express.json());
 
 // GET at path = /
 app.get("/", (req, res) => {
-  // database theke bar kore pathabi
-
   res.status(200).json({
     name: "Udita Chatterjee",
     age: 22,
@@ -19,9 +17,6 @@ app.get("/", (req, res) => {
 
 app.post("/", (req, res) => {
   const payload = req.body;
-
-  // database a likhe dibi
-
   res
     .status(200)
     .json({ message: "Successfully recieved data!", yourData: payload });
@@ -29,8 +24,6 @@ app.post("/", (req, res) => {
 
 app.put("/", (req, res) => {
   const payload = req.body;
-
-  // database a likhe dibi
   res
     .status(200)
     .json({ message: "Successfully recieved data!", yourData: payload });
@@ -38,7 +31,6 @@ app.put("/", (req, res) => {
 
 app.delete("/", (req, res) => {
   const query = req.query;
-
   res
     .status(200)
     .json({ message: "Successfully deleted " + query["name"] + "!" });
