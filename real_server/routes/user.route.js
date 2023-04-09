@@ -6,7 +6,10 @@ const router = express.Router();
 // GET /user
 // GETS ALL the users in the database
 router.get("/", async (req, res) => {
-  const users = await User.find({});
+  const query = req.query;
+
+  console.log(query);
+  const users = await User.find(query);
   res.json({ message: "Successfully got users!", users: users });
 });
 
