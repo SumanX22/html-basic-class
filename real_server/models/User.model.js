@@ -22,6 +22,6 @@ const UserSchema = new Schema({
   },
 });
 
-const User = mongoose.model("User", UserSchema);
+const User = mongoose.models.User || mongoose.model("User", UserSchema); // truthy falsy with or operator in javascript,
 
 module.exports = User;
