@@ -1,0 +1,11 @@
+<div
+  class="card mb-3"
+  style="max-width: 18rem"
+  [ngClass]="isMine ? 'text-bg-white' : 'text-bg-primary'"
+>
+  <div class="card-body">
+    <h5 class="card-title">{{ name }}</h5>
+    <hr />
+    <p class="card-text">{{ chatText }}</p>
+  </div>
+</div>
