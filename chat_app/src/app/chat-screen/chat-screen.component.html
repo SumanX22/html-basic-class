@@ -11,13 +11,15 @@
     ></app-chat-bubble>
   </div>
   <div class="card-footer row">
-    <input class="form-control col mx-2" placeholder="Type a message" />
-    <button
-      type="button"
-      class="btn btn-primary col-4 mx-2"
-      (click)="sendMessage()"
-    >
-      Send
-    </button>
+    <input
+      class="form-control col mx-2"
+      id="chatInput"
+      placeholder="Type a message"
+      ngModel
+      name="chatInput"
+      #chatInput="ngModel"
+      (change)="onChange(chatInput)"
+    />
+    <button type="button" class="btn btn-primary col-4 mx-2">Send</button>
   </div>
 </div>

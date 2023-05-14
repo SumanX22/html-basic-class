@@ -1,19 +1,24 @@
 const express = require("express");
+const cors = require("cors");
 const { Server } = require("socket.io");
 
 const app = express();
 
-const PORT = 5000;
-const server = app.listen(PORT, () => console.log("listening on port " + PORT));
+// allow all urls to access the web server
+app.use(cors());
 
-const io = new Server(server);
+const PORT = 5000;
+const expressServer = app.listen(PORT, () =>
+  console.log("listening on port " + PORT)
+);
+
+const io = new Server(expressServer, { cors: { origin: "*" } });
 
 io.on("connection", (socket) => {
-  console.log("connection hua!", socket);
-  socket.on("disconnect", () => console.log("disconnected"));
-});
+  console.log("connection hua!", socket.id);
+  socket.on("disconnect", () => console.log("disconnected... " + socket.id));
 
-io.on("incoming-chat", (data) => {
-  console.log(data);
-  io.emit("outgoing-chat", data);
+  socket.on("chat", (chatData) => {
+    socket.emit("chat", chatData);
+  });
 });

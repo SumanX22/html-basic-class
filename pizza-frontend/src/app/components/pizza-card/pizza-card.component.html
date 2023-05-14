@@ -1,0 +1,23 @@
+<div class="card m-4">
+  <img
+    style="height: 200px"
+    class="card-img-top"
+    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmcfxKAwaowte-ewQV23SpKUCC-nc9dABAiubGk3BUM2grAW1-9f9k5NSthNDsk0qSMbw&usqp=CAU"
+    alt="Card image cap"
+  />
+  <div class="card-body">
+    <h5 class="card-title">Margeritta Pizza</h5>
+    <p class="card-text">
+      Classic delight with 100% real mozzarella cheese. Available in Cheese
+      Burst, Wheat Thin Crust and Pan Crust options.
+    </p>
+    <h3 class="card-text">$12</h3>
+  </div>
+  <div class="card-footer row">
+    <a *ngIf="!isAdmin" href="#" class="btn btn-primary my-2 px-5 col">Buy</a>
+    <div *ngIf="isAdmin">
+      <a href="#" class="btn btn-warning my-2 px-5 col m-1">Edit</a>
+      <a href="#" class="btn btn-danger my-2 px-5 col m-1">Delete</a>
+    </div>
+  </div>
+</div>

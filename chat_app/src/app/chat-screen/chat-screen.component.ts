@@ -1,4 +1,6 @@
 import { Component, Input } from '@angular/core';
+import { ChatService } from '../chat.service';
+import { Chat } from '../interfaces/Chat.interface';
 
 @Component({
   selector: 'app-chat-screen',
@@ -6,9 +8,9 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./chat-screen.component.scss'],
 })
 export class ChatScreenComponent {
-  chatInput = 'Hello';
+  chatInputValue: string = '';
 
-  chats = [
+  chats: Array<Chat> = [
     {
       name: 'Suman Saha',
       chatText: 'Ki re kemon?',
@@ -26,11 +28,23 @@ export class ChatScreenComponent {
     },
   ];
 
-  sendMessage() {
-    this.chats.push({
-      name: 'Udita Chatterjee',
-      chatText: this.chatInput,
-      isMine: true,
-    });
+  constructor(private chatService: ChatService) {}
+
+  ngOnInit() {
+    this.chatService
+      .getNewMessage()
+      .subscribe((messageObject: Chat) => this.chats.push(messageObject));
   }
+
+  onChange(ngValue: any) {
+    this.chatInputValue = ngValue.viewModel;
+  }
+
+  // sendMessage() {
+  //   this.chatService.sendMessage({
+  //     name: 'Udita Chatterjee',
+  //     chatText: this.chatInputValue,
+  //     isMine: true,
+  //   });
+  // }
 }

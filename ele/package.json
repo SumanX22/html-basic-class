@@ -1,5 +1,5 @@
 {
-  "name": "chat_app_server",
+  "name": "ele",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,9 +9,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.18.2",
-    "socket.io": "^4.6.1"
+  "devDependencies": {
+    "@11ty/eleventy": "github:11ty/eleventy"
   }
 }

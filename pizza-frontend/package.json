@@ -1,5 +1,5 @@
 {
-  "name": "chat-app",
+  "name": "pizza-frontend",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -19,10 +19,7 @@
     "@angular/platform-browser-dynamic": "^15.2.0",
     "@angular/router": "^15.2.0",
     "bootstrap": "^5.2.3",
-    "bootstrap-icons": "^1.10.4",
-    "express": "^4.18.2",
     "rxjs": "~7.8.0",
-    "socket.io-client": "^4.6.1",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
   },
@@ -38,10 +35,5 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
     "typescript": "~4.9.4"
-  },
-  "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.6.",
-  "main": "index.js",
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  }
 }
