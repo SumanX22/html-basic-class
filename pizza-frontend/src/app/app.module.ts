@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { HttpClientModule } from '@angular/common/http';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PizzaCardComponent } from './components/pizza-card/pizza-card.component';
@@ -22,7 +24,7 @@ import { AddPizzaComponent } from './pages/add-pizza/add-pizza.component';
     NavbarComponent,
     AddPizzaComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

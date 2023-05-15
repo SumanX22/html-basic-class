@@ -6,18 +6,22 @@
     alt="Card image cap"
   />
   <div class="card-body">
-    <h5 class="card-title">Margeritta Pizza</h5>
+    <h5 class="card-title">{{ pizza.name }}</h5>
     <p class="card-text">
       Classic delight with 100% real mozzarella cheese. Available in Cheese
       Burst, Wheat Thin Crust and Pan Crust options.
     </p>
-    <h3 class="card-text">$12</h3>
+    <h3 class="card-text">₹ {{ pizza.price }}</h3>
   </div>
   <div class="card-footer row">
     <a *ngIf="!isAdmin" href="#" class="btn btn-primary my-2 px-5 col">Buy</a>
     <div *ngIf="isAdmin">
-      <a href="#" class="btn btn-warning my-2 px-5 col m-1">Edit</a>
-      <a href="#" class="btn btn-danger my-2 px-5 col m-1">Delete</a>
+      <a class="btn btn-warning my-2 px-5 col m-1" routerLink="/edit-pizza"
+        >Edit</a
+      >
+      <a class="btn btn-danger my-2 px-5 col m-1" (click)="deletePizza()"
+        >Delete</a
+      >
     </div>
   </div>
 </div>

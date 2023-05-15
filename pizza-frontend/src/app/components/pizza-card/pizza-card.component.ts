@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import Pizza from 'src/app/interface/pizza.interface';
 
 @Component({
   selector: 'app-pizza-card',
@@ -6,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./pizza-card.component.css'],
 })
 export class PizzaCardComponent {
-  isAdmin = true;
+  @Input() pizza: Pizza = {
+    name: 'Loading Title...',
+    price: 0,
+  };
+
+  isAdmin = false;
+
+  deletePizza() {
+    alert('Pizza Deleted');
+  }
 }

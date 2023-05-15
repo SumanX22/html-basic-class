@@ -11,6 +11,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'pizza', component: PizzaComponent },
   { path: 'add-pizza', component: AddPizzaComponent },
+  { path: 'edit-pizza', component: AddPizzaComponent },
   { path: 'edit-profile', component: EditProfileComponent },
   { path: 'register', component: RegisterComponent },
 ];

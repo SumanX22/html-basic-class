@@ -1,5 +1,9 @@
 <div class="container w-75">
   <div class="container-fluid row">
-    <app-pizza-card *ngFor="let pizza of pizzas" class="col-4"></app-pizza-card>
+    <app-pizza-card
+      *ngFor="let pizza of pizzas"
+      class="col-4"
+      [pizza]="pizza"
+    ></app-pizza-card>
   </div>
 </div>

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import Pizza from 'src/app/interface/pizza.interface';
+import { PizzaService } from 'src/app/services/pizza/pizza.service';
 
 @Component({
   selector: 'app-pizza',
@@ -6,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./pizza.component.css'],
 })
 export class PizzaComponent {
-  pizzas = Array(10).fill(0);
+  pizzas: Pizza[] = [];
+
+  constructor(private PizzaService: PizzaService) {
+    this.PizzaService.get().subscribe((data) => (this.pizzas = data.pizzas));
+  }
 }
