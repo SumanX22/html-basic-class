@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import Pizza from 'src/app/interface/pizza.interface';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
   selector: 'app-pizza-card',
@@ -12,7 +13,11 @@ export class PizzaCardComponent {
     price: 0,
   };
 
-  isAdmin = false;
+  isAdmin: boolean = false;
+
+  constructor(private AuthService: AuthService) {
+    this.isAdmin = AuthService.isAdmin();
+  }
 
   deletePizza() {
     alert('Pizza Deleted');
